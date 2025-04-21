@@ -77,14 +77,15 @@ export default function Home() {
   }, [options.date, selectedDate, refetch]);
 
   useEffect(() => {
-    if (powerData && powerData.data?.length > 0) {
-      const lastIndex = powerData.data
-        .map((obj, index) => (Object.keys(obj).length > 0 ? index : -1))
-        .filter((index) => index !== -1)
-        .pop();
+    if (powerData && powerData.data?.length > 0 && powerData.data[powerData.data.length - 1].value === 0) {
 
+      const lastIndex = powerData.data.findIndex((item) => item.timeString === '') - 1;
       setselectedbar(String(lastIndex ?? 0));
       setselectedBarData(powerData.data[lastIndex ?? powerData.data.length]);
+    }
+    else {
+      setselectedbar("23");
+      setselectedBarData(powerData.data[23]);
     }
   }, [powerData]);
 

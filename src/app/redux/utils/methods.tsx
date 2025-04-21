@@ -64,10 +64,10 @@ export function divideIntoFourGroups(
   const totalHours = 24;
   while (groupedData.length < totalHours) {
     groupedData.push({
-      date: "10",
-      usage: 24,
-      value: 24,
-      timeString: "06:15 - 06:30",
+      date: "",
+      usage: 0,
+      value: 0,
+      timeString: "",
       data: []
     });
   }

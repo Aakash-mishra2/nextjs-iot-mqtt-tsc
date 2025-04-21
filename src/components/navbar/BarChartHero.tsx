@@ -54,6 +54,7 @@ const BarChartHero = ({
 
   // ✅ Fix: Ensure dependencies include `chartdata` and `setselectedbar`
   const handlePrevClick = useCallback(() => {
+    console.log('selectedbar', selectedBar);
     const currentIndex = chartdata.data.findIndex(
       (bar) => bar.date === selectedBar
     );
@@ -65,6 +66,7 @@ const BarChartHero = ({
   }, [selectedBar, chartdata, setselectedbar, setselectedbardata]);
 
   const handleNextClick = useCallback(() => {
+    console.log('selectedbar', selectedBar);
     const currentIndex = chartdata.data.findIndex(
       (bar) => bar.date === selectedBar
     );

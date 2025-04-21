@@ -152,14 +152,14 @@ const FormatDailyUsageData = ({
     const totalHours = 24;
     while (groupedData.length < totalHours) {
       groupedData.push({
-        date: "10",
-        usage: 24,
-        value: 24,
+        date: "",
+        usage: 0,
+        value: 0,
         timeString: "06:15 - 06:30",
         data: [{
           date: '1',
-          usage: 210,
-          value: 210,
+          usage: 0,
+          value: 0,
           timeString: "06:15 - 06:30",
           peakValue: true,
           from: "",
