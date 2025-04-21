@@ -1,5 +1,4 @@
 import { EnergyDataProp } from "@/utils/types";
-import dayjs from "dayjs";
 export type FetchQuarterlyUsageDataProps = {
   slug?: string | undefined;
   options?: object;
@@ -16,9 +15,9 @@ export type dataItem = {
   date: string;
   usage: number;
   timestamp: number;
-  from: dayjs.Dayjs;
-  to: dayjs.Dayjs;
-  timeString: string;
+  from?: string;
+  to?: string;
+  timeString?: string;
   peakValue: boolean;
   value: number;
 };
@@ -28,15 +27,16 @@ export type quarterUsageData = {
   usage?: number | string;
   value?: number | string;
   timestamp?: string;
-  timestring?: string;
-  data?: dataItem[];
+  timeString?: string;
+  peakValue?: boolean;
+  data?: UsageDataItem[];
 };
 
 export type totalDailyUsageType = {
   date: string;
   totalEnergyConsumed: number | undefined;
   averageConsumption: number;
-  peakConsumption: { value: number; timeString: string };
+  peakConsumption: { value: number; timeString?: string };
   data: HourlyGroup[];
 };
 export type ResultDataType = {
@@ -48,13 +48,13 @@ export type ResultDataType = {
 
 type UsageDataItem = {
   date: string;
-  usage: number;
+  usage?: number;
   timestamp: number;
-  from: dayjs.Dayjs;
-  to: dayjs.Dayjs;
-  timeString: string;
+  from: string;
+  to: string;
+  timeString?: string;
   peakValue: boolean;
-  value: number;
+  value?: number;
 };
 
 
@@ -62,15 +62,16 @@ type HourlyGroup = {
   date: string;
   usage?: number;        // in kWh (usage / 1000)
   value?: number;        // same as usage, can be used for charting
-  timestring?: string;   // e.g., "Dalle ore 00:00 - alle ore 01:00"
-  data?: UsageDataItem[]; // 4 items per group
+  timeString?: string;   // e.g., "Dalle ore 00:00 - alle ore 01:00"
+  peakValue?: boolean;
+  data: UsageDataItem[]; // 4 items per group
 };
 
 
 export type dividedDataReturnType = {
   peakConsumption: {
     value: number;        // max hourly usage
-    timeString: string;   // range of the peak hour
+    timeString?: string;   // range of the peak hour
   };
   dividedIntervalsData: HourlyGroup[];
 };
@@ -80,7 +81,7 @@ export type UsageFetchResponse = {
     date: string;
     totalEnergyConsumed: number;
     averageConsumption: number;
-    peakConsumption: { value: number; timeString: string };
+    peakConsumption: { value: number; timeString?: string };
     data: EnergyDataProp[];
   } | null;
   error: string | false | null;

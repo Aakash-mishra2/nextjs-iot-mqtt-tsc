@@ -130,7 +130,7 @@ const DateSwitcher = ({
             Orario di consumo massimo giornalerio
           </p>
           <p className="text-sm md:text-base text-gray-500 font-light">
-            Orario {data?.peakConsumption.timeString}
+            Orario {data?.peakConsumption.timeString ?? ""}
           </p>
         </div>
 

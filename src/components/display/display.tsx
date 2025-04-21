@@ -57,8 +57,8 @@ const ConsumptionDisplay: React.FC<ConsumptionDisplayProps> = ({
         }}
         className="tracing-wider font-roobert"
       >
-        {`dalle ${timeString.split("-")[0]} alle 
-      ${timeString.split("-")[1]}`}
+        {timeString ? `dalle ${timeString.split("-")[0]} alle 
+      ${timeString.split("-")[1]}` : " "}
       </Typography>
       <div className="flex flex-col gap-3 justify-items-center mt-4">
         <div className="flex-col gap-1 flex text-semibold">
@@ -202,8 +202,8 @@ const Display = () => {
                   <ConsumptionDisplay
                     title="Ieri"
                     value={currDayConsumption}
-                    timeString={`00 - ${prevDayConsumption?.peakConsumption?.timeString.split("-")[1]
-                      }`}
+                    timeString={prevDayConsumption?.peakConsumption?.timeString ? `00 - ${prevDayConsumption?.peakConsumption?.timeString.split("-")[1]
+                      }` : ""}
                     unit="kW"
                   />
                 </div>

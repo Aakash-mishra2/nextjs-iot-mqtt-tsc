@@ -120,7 +120,7 @@ const BarChartHero = ({
               <div className="flex flex-col gap-1">
                 <div className="text-gray-600 text-sm">Ora della giornata</div>
                 <h2 className="text-sm md:text-md text-black font-semibold">
-                  {selectedBarData.timestring}
+                  {selectedBarData?.timeString ?? ""}
                 </h2>
               </div>
 

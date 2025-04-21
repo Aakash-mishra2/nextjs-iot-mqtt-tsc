@@ -53,7 +53,7 @@ export default function Home() {
   const [displayView, setDisplayView] = useState<string>("day");  //totalMonthlyConsumption switcher state
   const [selectedDate, setselectedDate] = useState<Dayjs>(dayjs().locale("en"));  //active date barchart switche state
   const [selectedBarData, setselectedBarData] = useState<quarterUsageData>(dummyBarGraph.data[0]);  //Barlist data to render on selection
-  const [selectedBar, setselectedbar] = useState<string>("0");  //Selected bar index switcher
+  const [selectedBar, setselectedbar] = useState<string>('0');  //Selected bar index switcher
 
   const options = useMemo(  //prevent infinite rerenders
     () => ({
@@ -123,7 +123,7 @@ export default function Home() {
                     children: (
                       //view switcher for total powerConsumption View
                       <div className="relative">
-                        <div className="absolute top-10 z-10 right-4 h-10 bg-[#F7F8FB] p-1 rounded-lg flex flex-row gap-1">
+                        <div className="absolute top-6 z-10 right-4 h-10 bg-[#F7F8FB] p-1 rounded-lg flex flex-row gap-1">
                           <Button
                             onClick={() => setDisplayView("month")}
                             className={`text-md h-8 font-medium rounded-[4px] ${displayView === "month"
@@ -154,7 +154,7 @@ export default function Home() {
                       //view switcher for total consumption barChart View
                       <div>
                         <div className="relative">
-                          <div className="absolute top-10 z-10 right-4 h-10 bg-[#F7F8FB] p-1 rounded-lg flex flex-row gap-1">
+                          <div className="absolute top-6 z-10 right-4 h-10 bg-[#F7F8FB] p-1 rounded-lg flex flex-row gap-1">
                             <Button
                               onClick={() => setView("month")}
                               className={`text-md h-8 rounded-[4px] ${view === "month"
@@ -213,7 +213,7 @@ export default function Home() {
             />
             <div className="p-4 flex flex-col gap-2">
 
-              <p className="text-2xl font-semibold">Sembra che la tua presa plus non sia connessa!</p>
+              <p className="text- font-semibold">Sembra che la tua presa plus non sia connessa!</p>
               <p className="text-lg text-[#667790] font-thin">Il dispositivo non riesce a completare la connessione.</p>
             </div>
 
@@ -222,20 +222,20 @@ export default function Home() {
               <p className="font-bold text-xl">Come posso risolvere il problema?</p>
               <p className="text-md text-[#667790] font-thin">Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. </p>
 
-              <div className="flex flex-col gap-2 p-2 bg-[#F7F8FB]">
+              <div className="flex flex-col gap-2 p-2 bg-[#F7F8FB] rounded-[6px]">
 
                 <p className="text-lg font-semibold">1. {" "} Lorem ipsum dolor sit amet</p>
                 <p className="text-md font-thin text-[#667790]">
                   Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem </p>
               </div>
 
-              <div className="flex flex-col gap-2 p-2 bg-[#F7F8FB]">
+              <div className="flex flex-col gap-2 p-2 bg-[#F7F8FB] rounded-[6px]">
 
                 <p className="text-lg font-semibold">2. {" "} Lorem ipsum dolor sit amet</p>
                 <p className="text-md font-thin text-[#667790]">
                   Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem </p>
               </div>
-              <div className="flex flex-col gap-2 p-2 bg-[#F7F8FB]">
+              <div className="flex flex-col gap-2 p-2 bg-[#F7F8FB] rounded-[6px]">
 
                 <p className="text-lg font-semibold">3. {" "} Lorem ipsum dolor sit amet</p>
                 <p className="text-md font-thin text-[#667790]">

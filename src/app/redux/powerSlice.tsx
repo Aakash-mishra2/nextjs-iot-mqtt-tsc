@@ -76,10 +76,7 @@ export const fetchQuarterData = createAsyncThunk<
         peakConsumption: { value: 0, timeString: "" },
         data: [],
       },
-      error:
-        typeof error === "string"
-          ? error
-          : "Something went wrong while fetching quarter data.",
+      error: error || null,
       loading: false,
     };
   }

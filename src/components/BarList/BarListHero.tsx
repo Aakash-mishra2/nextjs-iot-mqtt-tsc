@@ -24,7 +24,7 @@ const BarListHero = ({ data }: BarListHeroProps) => {
             {/* Time & Consumption Value */}
             <div className="flex flex-row justify-between space-x-2 mb-2">
               <div className="flex gap-4 items-center">
-                <span className="text-sm font-bold">{item?.timeString}</span>
+                <span className="text-sm font-bold">{item?.timeString ?? ""}</span>
                 {item.peakValue && (Number(item.peakValue) >= 3000) && (
                   <Chip
                     icon={<TbBolt style={{ color: "red" }} />}
