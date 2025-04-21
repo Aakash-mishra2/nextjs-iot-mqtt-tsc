@@ -7,7 +7,6 @@ export default async function Page() {
     const authorization = (await headers()).get('Authorization');
     const useragent = (await headers()).get('user-agent');
     const connection = ((await headers()).get('connection'));
-    //console.log('authorization', headersList.get);
     const accept = (await headers()).get('accept');
     const acceptLanguage = (await headers()).get('accept-language');
     const acceptEncoding = (await headers()).get('accept-encoding');

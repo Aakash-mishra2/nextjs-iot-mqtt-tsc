@@ -53,7 +53,7 @@ export function divideIntoFourGroups(
 
 
       groupedData.push({
-        date: String(i).split('-')[2],
+        date: String(i),
         usage: totalUsage / 1000,
         value: totalUsage / 1000,
         timeString,

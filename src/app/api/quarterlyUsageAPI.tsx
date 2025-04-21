@@ -141,7 +141,7 @@ const FormatDailyUsageData = ({
         const timeString = `Dalle ore ${dayjs(chunk[0].from).format("HH:mm")} - alle ore ${dayjs(chunk[3].to).format("HH:mm")}`;
 
         groupedData.push({
-          date: String(i).split('-')[2],
+          date: String(i),
           usage: totalUsage / 1000,
           value: totalUsage / 1000,
           timeString,

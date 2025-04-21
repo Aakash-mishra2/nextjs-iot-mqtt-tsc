@@ -11,14 +11,14 @@ export const dummyBarGraph = {
   peakConsumption: { value: 5490, timeString: "" },
   data: [
     {
-      date: "2025-04-20",
+      date: "0",
       usage: 121,
       value: 121,
       timestring: "Dalle ore 05:30 - alle ore 06:30",
       peakValue: true,
       data: [
         {
-          date: "2025-04-20",
+          date: "1",
           usage: 31,
           value: 31,
           timestamp: 1742860800,
@@ -28,7 +28,7 @@ export const dummyBarGraph = {
           to: "2025-04-20T05:45:00",
         },
         {
-          date: "2025-04-20",
+          date: "2",
           usage: 29,
           value: 29,
           timestamp: 1742861700,
@@ -38,7 +38,7 @@ export const dummyBarGraph = {
           to: "2025-04-20T06:00:00",
         },
         {
-          date: "2025-04-20",
+          date: "3",
           usage: 31,
           value: 31,
           timestamp: 1742862600,
@@ -48,7 +48,7 @@ export const dummyBarGraph = {
           to: "2025-04-20T06:15:00",
         },
         {
-          date: "2025-04-20",
+          date: "4",
           usage: 30,
           value: 30,
           timestamp: 1742863500,
