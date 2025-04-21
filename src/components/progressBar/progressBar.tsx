@@ -15,7 +15,7 @@ type CustomProgressProps = {
   serial: string;
 };
 
-const CustomLinearProgress = ({ value }: CustomProgressProps) => {
+const CustomLinearProgress = ({ value = 0 }: CustomProgressProps) => {
   //const dispatch = useDispatch<AppDispatch>();
   const bkgColor =
     value < 3000 ? (value < 2500 ? "#41875c" : "#F5B500") : "#ED0529";
@@ -191,7 +191,7 @@ const CustomLinearProgress = ({ value }: CustomProgressProps) => {
               display: "flex",
               justifyContent: "space-between",
               width: "100%",
-              marginTop: "8px",
+              marginTop: "4px",
               marginBottom: "8px",
               position: "relative",
               zIndex: 2,

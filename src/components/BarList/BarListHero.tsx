@@ -16,10 +16,10 @@ const BarListHero = ({ data }: BarListHeroProps) => {
       {/* Average Consumption Card */}
       <Card className="mt-3 p-4 flex justify-between !ring-transparent items-center bg-slate-200 rounded-lg">
         <span className="text-md itext-black">Consumo orario</span>
-        <span className="text-xl font-semibold">{`${total} Wh`}</span>
+        <span className="text-xl font-semibold">{`${Math.round(total).toFixed(0)} Wh`}</span>
       </Card>
       <div className="mt-4 space-y-4">
-        {data?.data?.map((item, index) => (
+        {data?.data?.map((item, index) => (Object.keys(item).length > 0 &&
           <div key={index} className="space-y-1">
             {/* Time & Consumption Value */}
             <div className="flex flex-row justify-between space-x-2 mb-2">
@@ -48,7 +48,7 @@ const BarListHero = ({ data }: BarListHeroProps) => {
             </div>
             <LinearProgress
               variant="determinate"
-              value={item.value}
+              value={item.value ?? 0}
               sx={{
                 height: 12,
                 borderRadius: 16,

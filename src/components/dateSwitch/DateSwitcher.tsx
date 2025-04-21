@@ -31,7 +31,7 @@ const DateSwitcher = ({
     }
   };
   return (
-    <div className="flex flex-col gap-0 pt-8 pr-4 pl-4 pb-6 w-100 bg-white">
+    <div className="flex flex-col gap-0 pt-4 pr-4 pl-4 pb-6 w-100 bg-white">
       <div className="flex flex-row justify-between">
         <div className="flex flex-col gap-0">
           <p className="xsm:text-[14px] md:text-md text-base font-medium font-roobert text-[#667790]">
@@ -134,7 +134,7 @@ const DateSwitcher = ({
           </p>
         </div>
 
-        <p className="text-base w-16 md:w-18 -md:ml-0 font-semibold font-roobert">
+        <p className="text-base md:text-md w-16 md:w-18 -md:ml-0 font-semibold font-roobert">
           {data?.peakConsumption.value} Wh
         </p>
       </div>

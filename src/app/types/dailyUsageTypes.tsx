@@ -1,5 +1,5 @@
 import { EnergyDataProp } from "@/utils/types";
-
+import dayjs from "dayjs";
 export type FetchQuarterlyUsageDataProps = {
   slug?: string | undefined;
   options?: object;
@@ -13,14 +13,14 @@ export type QuarterlyAPIResponseType = {
 };
 
 export type dataItem = {
-  date?: string;
-  usage?: number;
-  value?: number;
-  name?: string;
-  peakValue?: boolean;
-  from?: string;
-  to?: string;
-  timeString?: string;
+  date: string;
+  usage: number;
+  timestamp: number;
+  from: dayjs.Dayjs;
+  to: dayjs.Dayjs;
+  timeString: string;
+  peakValue: boolean;
+  value: number;
 };
 
 export type quarterUsageData = {
@@ -37,7 +37,7 @@ export type totalDailyUsageType = {
   totalEnergyConsumed: number | undefined;
   averageConsumption: number;
   peakConsumption: { value: number; timeString: string };
-  data: quarterUsageData[];
+  data: HourlyGroup[];
 };
 export type ResultDataType = {
   data: totalDailyUsageType;
@@ -46,14 +46,33 @@ export type ResultDataType = {
   refetch?: (params: FetchQuarterlyUsageDataProps) => void;
 };
 
-type peakConsumptionType = {
-  value: number;
+type UsageDataItem = {
+  date: string;
+  usage: number;
+  timestamp: number;
+  from: dayjs.Dayjs;
+  to: dayjs.Dayjs;
   timeString: string;
+  peakValue: boolean;
+  value: number;
 };
 
+
+type HourlyGroup = {
+  date: string;
+  usage?: number;        // in kWh (usage / 1000)
+  value?: number;        // same as usage, can be used for charting
+  timestring?: string;   // e.g., "Dalle ore 00:00 - alle ore 01:00"
+  data?: UsageDataItem[]; // 4 items per group
+};
+
+
 export type dividedDataReturnType = {
-  peakConsumption: peakConsumptionType;
-  dividedIntervalsData: quarterUsageData[];
+  peakConsumption: {
+    value: number;        // max hourly usage
+    timeString: string;   // range of the peak hour
+  };
+  dividedIntervalsData: HourlyGroup[];
 };
 
 export type UsageFetchResponse = {

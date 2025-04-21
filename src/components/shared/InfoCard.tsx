@@ -44,9 +44,9 @@ const InfoCard = () => {
                 className="mt-1 gap-1 ml-1"
               >
                 {status ? (
-                  <TbCircleFilled className="text-blue-600 rounded-full w-4 h-4" />
+                  <TbCircleFilled className="text-[#1F6CF9] rounded-full w-4 h-4" />
                 ) : (
-                  <TbCircleFilled className="text-red-800 rounded-full w-4 h-4" />
+                  <TbCircleFilled className="text-[#ED0529] rounded-full w-4 h-4" />
                 )}
                 <div className="flex flex-col gap-1 text-xs ml-2">
                   <p className="text-[#667790] font-roboto text-base">

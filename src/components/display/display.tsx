@@ -139,7 +139,7 @@ const Display = () => {
 
   const { data: prevDayConsumption, loading: showLoader2 } = FormatDailyUsageData({
 
-    slug : queryString.stringify({
+    slug: queryString.stringify({
       date: dayjs().subtract(1, "day").format("YYYY-MM-DD"),
       serial: serialId,
     }),
@@ -154,74 +154,71 @@ const Display = () => {
     currentDayConsumption.totalEnergyConsumed > 0 &&
     prevDayConsumption.totalEnergyConsumed &&
     prevDayConsumption.totalEnergyConsumed > 0
-  ) 
+  )
     difference = Math.round((currDayConsumption - prevDay) / 100);
 
   return (
     <div className="flex flex-col gap-4 bg-white px-4 mb-1">
-      <div className="flex flex-col gap-4 pt-8 px-2">
+      <div className="flex flex-col gap-4 pt-6 px-2">
         <div className="flex flex-col gap-0">
-
-      
-        <p className="xsm:text-[14px] md:text-md text-base font-medium font-roobert text-[#667790]">
-          Andamento consumo
-        </p>
-        <div className="flex flex-row gap-1 items-baseline text-[#397a5c] ">
-          <div className="flex flex-row gap-0 items-baseline">
-            <Metric
-              className="text-xll font-black font-roobert"
-              style={{ color: "#37785a" }}
-            >
-              {difference ?? 0}
-            </Metric>
-            {/* <FaPercentage className="text-2xl font-black" /> */}
+          <p className="xsm:text-[14px] md:text-md text-base font-medium font-roobert text-[#667790]">
+            Andamento consumo
+          </p>
+          <div className="flex flex-row gap-1 items-baseline text-[#397a5c] ">
+            <div className="flex flex-row gap-0 items-baseline">
+              <Metric
+                className="text-xll font-black font-roobert"
+                style={{ color: "#37785a" }}
+              >
+                {difference ?? 0}
+              </Metric>
+              {/* <FaPercentage className="text-2xl font-black" /> */}
+            </div>
+            <p className="text-xl font-medium ">kWh</p>
           </div>
-          <p className="text-xl font-medium ">kWh</p>
         </div>
-        </div>
-      
-      {
-        (showLoader || showLoader2 || !currentDayConsumption || !prevDayConsumption ) ? 
-        <div className="h-40 w-full flex items-center justify-center text-pink-800">
-        <CircularProgress 
-           sx={{
-            color: '#D3135A', // Custom hex color
-            thickness: 6, // Make it bolder (default is 3.6)
-          }}
-        />
-          </div>
-        : 
-        (
-          <> 
-          <div className="w-full text-black flex flex-row gap-4 justify-between">
 
-          <ConsumptionDisplay
-            title="Oggi"
-            value={prevDay}
-            timeString="00 - 24:00"
-            unit="kW"
-          />
-          <ConsumptionDisplay
-            title="Ieri"
-            value={currDayConsumption}
-            timeString={`00 - ${
-              prevDayConsumption?.peakConsumption?.timeString.split("-")[1]
-            }`}
-            unit="kW"
-          />
-        </div>
-        <div className="rounded-[4px] border-2 px-4 py-2 flex flex-row gap-2 border-[#01855d] bg-[#f5fff6] text-black font-roboto items-center">
-        <p className={`text-xs xsss:text-sm xsm:text-md text-black`}>
-          Lo sapevi che questo mese hai consumato il{" "}
-          <b>
-            {Math.abs(difference)} % {difference < 0 ? "in meno" : "in più"}
-          </b>{" "}
-          rispetto a ieri? 🎉
-        </p>
-      </div>
-        </>
-        )
-      }
+        {
+          (showLoader || showLoader2 || !currentDayConsumption || !prevDayConsumption) ?
+            <div className="h-40 w-full flex items-center justify-center text-pink-800">
+              <CircularProgress
+                sx={{
+                  color: '#D3135A', // Custom hex color
+                  thickness: 6, // Make it bolder (default is 3.6)
+                }}
+              />
+            </div>
+            :
+            (
+              <>
+                <div className="w-full text-black flex flex-row gap-4 justify-between">
+
+                  <ConsumptionDisplay
+                    title="Oggi"
+                    value={prevDay}
+                    timeString="00 - 24:00"
+                    unit="kW"
+                  />
+                  <ConsumptionDisplay
+                    title="Ieri"
+                    value={currDayConsumption}
+                    timeString={`00 - ${prevDayConsumption?.peakConsumption?.timeString.split("-")[1]
+                      }`}
+                    unit="kW"
+                  />
+                </div>
+                <div className="rounded-[4px] border-2 px-4 py-2 flex flex-row gap-2 border-[#01855d] bg-[#f5fff6] text-black font-roboto items-center">
+                  <p className={`text-xs xsss:text-sm xsm:text-md text-black`}>
+                    Lo sapevi che questo mese hai consumato il{" "}
+                    <b>
+                      {Math.abs(difference)} % {difference < 0 ? "in meno" : "in più"}
+                    </b>{" "}
+                    rispetto a ieri? 🎉
+                  </p>
+                </div>
+              </>
+            )
+        }
       </div>
 
       <hr className="text-gray-600 text-md" />

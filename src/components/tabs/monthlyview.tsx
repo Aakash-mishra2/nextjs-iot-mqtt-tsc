@@ -89,7 +89,7 @@ const MonthlyView = () => {
 
   return (
     <div className="flex flex-col bg-white">
-      <div className="flex flex-col gap-0 pt-4 pr-4 pl-4 pb-6 w-100 bg-white">
+      <div className="flex flex-col gap-0 pt-4 pr-4 pl-4 pb-4 w-100 bg-white">
         <div className="flex flex-row justify-between">
           <div className="flex flex-col gap-0">
             <p className="xsm:text-[14px] md:text-md text-base font-medium font-roobert text-[#667790]">
@@ -107,9 +107,9 @@ const MonthlyView = () => {
             </span>
           </div>
         </div>
-        <div className="flex flex-row justify-between mt-4">
+        <div className="flex flex-row justify-between mt-2">
           <div className="flex flex-col gap-1">
-            <p className="text-gray-500 text-md font-medium">Mese</p>
+            <p className="text-gray-500 text-sm font-medium">Mese</p>
             <span className="text-sm xss:text-base md:text-md -mt-1">
               {toTitleCase(dayjs().month(selectedMonth).format("MMMM"))}{" "}
               {dayjs().year(selectedYear).format("YYYY")}

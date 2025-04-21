@@ -633,6 +633,7 @@ interface BarChartProps extends React.HTMLAttributes<HTMLDivElement> {
   showSparkPlugs?: boolean;
   skipXAxisLabels?: boolean;
   showDottedLines?: boolean;
+  handleBarClick?: (date: string) => void;
 }
 
 const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
@@ -676,6 +677,7 @@ const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
       animationDuration,
       showSparkPlugs,
       skipXAxisLabels,
+      handleBarClick,
       ...other
     } = props;
     const CustomTooltip = customTooltip;
@@ -700,6 +702,7 @@ const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
     }
     function onBarClick(data: any, _: any, event: React.MouseEvent) {
       event.stopPropagation();
+      if (handleBarClick) handleBarClick(data?.date);
       if (!onValueChange) return;
       if (deepEqual(activeBar, { ...data.payload, value: data.value })) {
         setActiveLegend(undefined);

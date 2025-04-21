@@ -26,7 +26,6 @@ const BarChartHero = ({
 }: BarchartProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [barWidth, setBarWidth] = useState(7); // Default bar width
-
   useEffect(() => {
     const updateBarWidth = () => {
       const windowWidth = window.innerWidth;
@@ -39,6 +38,19 @@ const BarChartHero = ({
     window.addEventListener("resize", updateBarWidth); // Update on resize
     return () => window.removeEventListener("resize", updateBarWidth); // Cleanup
   }, []);
+
+  const handleBarClick = useCallback(
+    (date: string) => {
+      const newSelectedBarIndex = chartdata?.data.findIndex(
+        (bar) => bar.date === date
+      );
+      if (newSelectedBarIndex !== -1) {
+        setselectedbar(date);
+        setselectedbardata(chartdata?.data[newSelectedBarIndex]);
+      }
+    },
+    [chartdata, setselectedbar, setselectedbardata]
+  );
 
   // ✅ Fix: Ensure dependencies include `chartdata` and `setselectedbar`
   const handlePrevClick = useCallback(() => {
@@ -92,6 +104,7 @@ const BarChartHero = ({
                 borderRadius: "0.5rem 0.5rem 0 0",
                 marginRight: "-4px",
               }}
+              handleBarClick={handleBarClick}
               tickGap={0}
               startEndOnly={false}
               showYAxis={true}
