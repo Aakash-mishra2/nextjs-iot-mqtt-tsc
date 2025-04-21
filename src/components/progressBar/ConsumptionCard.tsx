@@ -46,7 +46,6 @@ const ConsumptionCard = () => {
         return { iotData: JSON.parse(message.payloadString).Chain2Data };
       } else return { iotData: { message: meterEventDummyData } };
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [serial]);
   return (
     <>
