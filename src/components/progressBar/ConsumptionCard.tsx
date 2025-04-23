@@ -65,7 +65,7 @@ const ConsumptionCard = () => {
                 dayjs(iotData?.Ts, "YYYY/MM/DD HH:mm:ss").format(
                   "dddd D MMMM YYYY, [ore] HH:mm"
                 )
-              )} - `}
+              ).replace("Ore", "ore")} - `}
               <strong className="text-gray-700 font-roobert tracking-tight">
                 Fascia F1
               </strong>

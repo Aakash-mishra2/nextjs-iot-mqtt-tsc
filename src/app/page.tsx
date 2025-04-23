@@ -52,7 +52,7 @@ export default function Home() {
   const [view, setView] = useState<string>("day");  //totalDailyConsumption switcher state
   const [displayView, setDisplayView] = useState<string>("day");  //totalMonthlyConsumption switcher state
   const [selectedDate, setselectedDate] = useState<Dayjs>(dayjs().locale("en"));  //active date barchart switche state
-  const [selectedBarData, setselectedBarData] = useState<quarterUsageData>(dummyBarGraph.data[0]);  //Barlist data to render on selection
+  const [selectedBarData, setselectedBarData] = useState<quarterUsageData>(dummyBarGraph.data[0]);  //Barlist data to render 
   const [selectedBar, setselectedbar] = useState<string>('0');  //Selected bar index switcher
 
   const options = useMemo(  //prevent infinite rerenders
