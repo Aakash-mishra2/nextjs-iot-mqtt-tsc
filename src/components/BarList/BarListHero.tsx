@@ -12,7 +12,7 @@ const BarListHero = ({ data }: BarListHeroProps) => {
     data?.data?.reduce((sum, item) => sum + (item?.usage ?? 0), 0) ?? 100;
 
   return (
-    <div className="w-full mx-auto p-4 pt-2 bg-white font-roboto pb-12 mb-12">
+    <div className="w-full mx-auto p-4 bg-white font-roboto pb-12 mb-12">
       {/* Average Consumption Card */}
       <Card className="mt-3 p-4 flex justify-between !ring-transparent items-center bg-slate-200 rounded-lg">
         <span className="text-md itext-black">Consumo orario</span>

@@ -163,6 +163,7 @@ const BarChartHero = ({
                 </div>
               </div>
             </div>
+            <hr className="bg-[#C2CDDD] h-[2px] mt-2 mr-4" />
           </div>
         </div>
       </div>
