@@ -192,7 +192,6 @@ const Display = () => {
             (
               <>
                 <div className="w-full text-black flex flex-row gap-4 justify-between">
-
                   <ConsumptionDisplay
                     title="Oggi"
                     value={prevDay}
@@ -202,7 +201,7 @@ const Display = () => {
                   <ConsumptionDisplay
                     title="Ieri"
                     value={currDayConsumption}
-                    timeString={prevDayConsumption?.peakConsumption?.timeString ? `00 - ${prevDayConsumption?.peakConsumption?.timeString.split("-")[1]
+                    timeString={currentDayConsumption?.peakConsumption.timeString ? `00 - ${currentDayConsumption?.peakConsumption?.timeString.split("-")[1]
                       }` : ""}
                     unit="kW"
                   />
