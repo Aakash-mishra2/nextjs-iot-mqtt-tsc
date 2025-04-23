@@ -124,7 +124,7 @@ export default function Home() {
                     children: (
                       //view switcher for total powerConsumption View
                       <div className="relative">
-                        <div className="absolute top-6 z-10 right-4 h-10 bg-[#F7F8FB] p-1 rounded-lg flex flex-row gap-1">
+                        <div className="absolute top-6 z-10 right-4 h-10 bg-[#F7F8FB] px-0 py-1 rounded-lg flex flex-row gap-1">
                           <Button
                             onClick={() => setDisplayView("month")}
                             className={`text-md h-8 font-medium rounded-[4px] ${displayView === "month"
@@ -155,7 +155,7 @@ export default function Home() {
                       //view switcher for total consumption barChart View
                       <div>
                         <div className="relative">
-                          <div className="absolute top-6 z-10 right-4 h-10 bg-[#F7F8FB] p-1 rounded-lg flex flex-row gap-1">
+                          <div className="absolute top-6 z-10 right-4 h-10 bg-[#F7F8FB] px-0 py-1 rounded-lg flex flex-row gap-1">
                             <Button
                               onClick={() => setView("month")}
                               className={`text-md h-8 rounded-[4px] ${view === "month"
@@ -167,7 +167,7 @@ export default function Home() {
                             </Button>
                             <Button
                               onClick={() => setView("day")}
-                              className={`text-md h-8 rounded-[4px] ${view === "day"
+                              className={`text-md h-8 py-0 rounded-[4px] ${view === "day"
                                 ? "border-2 border-blue-600 font-medium text-blue-700 bg-white"
                                 : "text-gray-900 bg-transparent border-none"
                                 }`}

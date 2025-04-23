@@ -123,7 +123,7 @@ const DateSwitcher = ({
       </div>
       <div
         id="peak_consumption_stats"
-        className="flex montserrat-custom items-center flex-row gap-8 justify-between w-full bg-white pt-2 mt-1 "
+        className="flex montserrat-custom items-center flex-row gap-8 justify-between w-full bg-white pt-2 "
       >
         <div className="flex flex-col gap-0">
           <p className="text-sm font-medium xss:text-base md:text-md text-black">

@@ -167,7 +167,7 @@ const Display = () => {
           <div className="flex flex-row gap-1 items-baseline text-[#397a5c] ">
             <div className="flex flex-row gap-0 items-baseline">
               <Metric
-                className="text-xll font-black font-roobert"
+                className="text-3xl font-black font-roobert"
                 style={{ color: "#37785a" }}
               >
                 {difference ?? 0}
