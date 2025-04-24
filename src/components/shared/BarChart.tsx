@@ -826,7 +826,7 @@ const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
                   offset={-20}
                   className="text-gray-800 text-sm font-medium dark:text-gray-800"
                 >
-                  {xAxisLabel}
+                  {Number(xAxisLabel) < 10 ? Number(xAxisLabel) / 10 : xAxisLabel}
                 </Label>
               )}
             </XAxis>

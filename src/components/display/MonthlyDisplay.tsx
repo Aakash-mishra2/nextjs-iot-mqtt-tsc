@@ -196,7 +196,7 @@ const MonthlyDisplay = () => {
         </p>
         <div className="flex flex-row gap-1 items-baseline text-[#397a5c] ">
           <div className="flex flex-row gap-0 items-baseline">
-            <Text className="text-3xl font-black ">{Math.round((previousMonthUsage - currentMonthUsage) / 1000).toFixed(0)}</Text>
+            <Text className="text-3xl font-black ">{Math.round((previousMonthUsage - currentMonthUsage) / 1000).toFixed(0)}%</Text>
           </div>
           <p className="text-xl font-bold ">kWh</p>
         </div>

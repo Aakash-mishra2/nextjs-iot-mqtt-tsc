@@ -167,10 +167,10 @@ const Display = () => {
           <div className="flex flex-row gap-1 items-baseline text-[#397a5c] ">
             <div className="flex flex-row gap-0 items-baseline">
               <Metric
-                className="text-3xl font-black font-roobert"
+                className="text-3xl font-black font-roobert tracking-wide"
                 style={{ color: "#37785a" }}
               >
-                {difference ?? 0}
+                {difference ?? 0}%
               </Metric>
               {/* <FaPercentage className="text-2xl font-black" /> */}
             </div>
@@ -192,17 +192,18 @@ const Display = () => {
             (
               <>
                 <div className="w-full text-black flex flex-row gap-4 justify-between">
+
                   <ConsumptionDisplay
                     title="Oggi"
-                    value={prevDay}
-                    timeString="00 - 24:00"
+                    value={currDayConsumption}
+                    timeString={currentDayConsumption?.peakConsumption.timeString ? `00 - ${currentDayConsumption?.peakConsumption?.timeString.split("-")[1]
+                      }` : ""}
                     unit="kW"
                   />
                   <ConsumptionDisplay
                     title="Ieri"
-                    value={currDayConsumption}
-                    timeString={currentDayConsumption?.peakConsumption.timeString ? `00 - ${currentDayConsumption?.peakConsumption?.timeString.split("-")[1]
-                      }` : ""}
+                    value={prevDay}
+                    timeString="00 - 23:59"
                     unit="kW"
                   />
                 </div>

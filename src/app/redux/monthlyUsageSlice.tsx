@@ -51,7 +51,7 @@ export const fetchMonthlyData = createAsyncThunk<
     const formattedResponse = response.data.map((item: dailyEnergyTypes) => {
       return {
         ...item,
-        date: item.formattedDate ? item?.formattedDate.split("-")[2] : "0",
+        date: item.formattedDate ? (Number(item?.formattedDate.split("-")[2]) < 10 ? (item?.formattedDate.split("-")[2][1]) : item?.formattedDate.split("-")[2]) : "0",
         formattedDate: item.formattedDate,
         totalActEnergy: (item?.totalActEnergy ? item?.totalActEnergy : 0) / 100,
       };

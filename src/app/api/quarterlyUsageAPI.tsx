@@ -1,6 +1,10 @@
 //import axios from "axios";
 import dayjs from "dayjs";
 import axios from "axios";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+
+
 import { useState, useEffect, useCallback } from "react";
 import {
   FetchQuarterlyUsageDataProps,
@@ -21,6 +25,9 @@ const QUARTER_USAGE_URL = "v1/energy/quarter";
  * @param {Object} [props.options={}] - Optional parameters for the API request.
  * @returns {Promise<UsageData[]>} A promise that resolves to an array of usage data objects.
  */
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 const FetchUsageByIntervals = ({
   slug,
@@ -103,7 +110,7 @@ const FormatDailyUsageData = ({
 
     // 1️⃣ Preprocess each item: add time string from timestamp
     const formattedData = data.map((item) => {
-      const from = dayjs.unix(item.timestamp);
+      const from = dayjs.unix(item.timestamp).tz("Europe/Rome");
       const to = from.add(15, "minute");
       return {
         ...item,

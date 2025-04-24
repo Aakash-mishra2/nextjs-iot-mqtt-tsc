@@ -44,7 +44,7 @@ const ConsumptionCard = () => {
         const messageRecieved = JSON.parse(message.payloadString).Chain2Data;
         setIotData(messageRecieved);
         return { iotData: JSON.parse(message.payloadString).Chain2Data };
-      } else return { iotData: { message: meterEventDummyData } };
+      } else return {};
     };
   }, [serial]);
   return (
