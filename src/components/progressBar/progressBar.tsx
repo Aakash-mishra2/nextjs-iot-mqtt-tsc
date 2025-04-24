@@ -29,7 +29,7 @@ const CustomLinearProgress = ({ value = 0 }: CustomProgressProps) => {
   return (
     <div className="flex flex-col relative bg-transparent">
       <div className="bg-white rounded-[6px] p-2 px-4 pb-4">
-        <div className="flex flex-row gap-2 items-end mt-2 md:mb-4 mb-2">
+        <div className="flex flex-row gap-1 items-end mt-2 md:mb-4 mb-2">
           <div className="flex flex-row gap-0 items-end">
             <span className="flex flex-row items-end -mt-1">
               <Metric
@@ -152,15 +152,15 @@ const CustomLinearProgress = ({ value = 0 }: CustomProgressProps) => {
                 borderRadius: "50%",
                 position: "absolute",
                 left: {
-                  xsm: "52%",
-                  xsss: "52%",
-                  xss: "48%",
-                  xs: "48%",
-                  sm: "47%",
-                  md: "47%",
-                  lg: "47%",
-                  xl: "46%",
-                  "2xl": "46%",
+                  xsm: "58%",
+                  xsss: "57%",
+                  xss: "56%",
+                  xs: "54%",
+                  sm: "54%",
+                  md: "54%",
+                  lg: "54%",
+                  xl: "54%",
+                  "2xl": "54%",
                 },
               }}
             />
@@ -235,15 +235,15 @@ const CustomLinearProgress = ({ value = 0 }: CustomProgressProps) => {
               sx={{
                 position: "absolute",
                 left: {
-                  xsm: "43%",
-                  xsss: "43%",
-                  xss: "43%",
-                  xs: "48%",
-                  sm: "48%",
-                  md: "48%",
-                  lg: "48%",
-                  xl: "48%",
-                  "2xl": "48%",
+                  xsm: "58%",
+                  xsss: "57%",
+                  xss: "56%",
+                  xs: "54%",
+                  sm: "54%",
+                  md: "54%",
+                  lg: "54%",
+                  xl: "54%",
+                  "2xl": "54%",
                 },
                 transform: "translateX(-50%)",
                 display: "flex",
@@ -268,7 +268,7 @@ const CustomLinearProgress = ({ value = 0 }: CustomProgressProps) => {
               sx={{
                 position: "absolute",
                 left: {
-                  xsm: "75%",
+                  xsm: "78%",
                   xsss: "76%",
                   xss: "76%",
                   xs: "77%",
@@ -278,7 +278,7 @@ const CustomLinearProgress = ({ value = 0 }: CustomProgressProps) => {
                   xl: "78%",
                   "2xl": "78%",
                 },
-                transform: "translateX(-42%)",
+                transform: "translateX(-38%)",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",

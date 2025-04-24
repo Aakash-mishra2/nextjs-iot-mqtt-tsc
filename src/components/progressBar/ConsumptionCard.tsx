@@ -52,15 +52,15 @@ const ConsumptionCard = () => {
       <Card className="bg-transparent font-roboto rounded-sm p-4 px-2 my-0 !ring-0 !dark:ring-0">
         <div className="flex flex-col p-2 justify-between">
           <div className="flex justify-between">
-            <p className="text-base md:text-xl text-black font-roobert font-medium">
+            <p className="text-[20px] md:text-lg text-black font-roobert font-medium">
               Consumo istantaneo
             </p>
-            <Badge className="text-black text-base sm:text-md md:text-xl rounded-lg mb-1 ring-green-500 ring-1 bg-[#f5fff6] px-2">
+            <Badge className="text-black text-base sm:text-md md:text-xl rounded-lg mb-1 ring-[#B2E6CD] ring-1 bg-[#f5fff6] px-2">
               TEMPO REALE
             </Badge>
           </div>
-          <div className="flex flex-row gap-2 items-center mt-1 font-roobert">
-            <Text className="text-base md:text-xl text-black font-medium mt-0">
+          <div className="flex flex-row gap-2 items-center mt-0 font-roobert">
+            <Text className="text-[12px] md:text-xl text-black font-medium mt-0">
               {`${toTitleCase(
                 dayjs(iotData?.Ts, "YYYY/MM/DD HH:mm:ss").format(
                   "dddd D MMMM YYYY, [ore] HH:mm"
@@ -72,7 +72,7 @@ const ConsumptionCard = () => {
             </Text>
 
             <InfoIcon
-              className="font-bold text-[#D3135A] text-sm xsm:text-md w-4 h-4"
+              className="font-bold text-[#D3135A] text-sm xsm:text-md w-3 h-3"
               onClick={() => setIsModalOpen(() => true)}
             />
           </div>
