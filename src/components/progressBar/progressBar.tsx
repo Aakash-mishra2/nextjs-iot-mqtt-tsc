@@ -120,7 +120,7 @@ const CustomLinearProgress = ({ value = 0 }: CustomProgressProps) => {
           <Box
             className="absolute w-full"
             sx={{
-              top: "-20px",
+              top: "-18px",
               zIndex: 1,
             }}
           >

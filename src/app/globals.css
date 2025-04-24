@@ -25,7 +25,6 @@ body {
   font-family: var(--font-roboto), sans-serif;
 }
 
-
 .montserrat-custom {
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
@@ -49,14 +48,6 @@ body {
   /* IE & Edge */
 }
 
-.recharts-bar-rectangle:hover {
-  fill: none !important;
-  filter: none !important;
-  opacity: 1 !important;
-}
-
-.recharts-rectangle:hover {
-  fill: none !important;
-  filter: none !important;
-  opacity: 1 !important;
+.custom-bar-group {
+  background-color: white;
 }

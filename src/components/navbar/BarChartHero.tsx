@@ -26,6 +26,7 @@ const BarChartHero = ({
 }: BarchartProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [barWidth, setBarWidth] = useState(7); // Default bar width
+
   useEffect(() => {
     const updateBarWidth = () => {
       const windowWidth = window.innerWidth;
@@ -102,7 +103,7 @@ const BarChartHero = ({
               colors={["blue"]}
               customWrapperStyle={{
                 borderRadius: "0.5rem 0.5rem 0 0",
-                marginRight: "-4px",
+                marginLeft: "-12px"
               }}
               handleBarClick={handleBarClick}
               tickGap={0}
@@ -163,7 +164,7 @@ const BarChartHero = ({
                 </div>
               </div>
             </div>
-            <hr className="bg-[#C2CDDD] h-[2px] mt-2 mr-4" />
+            <hr className="bg-[#C2CDDD] h-[1px] mt-2 mr-4" />
           </div>
         </div>
       </div>

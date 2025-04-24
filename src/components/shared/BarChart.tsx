@@ -102,7 +102,9 @@ const renderShape = (
 
   return (
     <>
-      <g className="recharts-layer recharts-bar-rectangle">
+      <motion.g
+        className="recharts-layer recharts-bar-rectangle"
+      >
         {numPeaks > 0 && (
           <g transform={`translate(${x + width / 2 - 8}, ${y - 24})`}>
             <RxLightningBolt
@@ -141,7 +143,7 @@ const renderShape = (
                 x1={x + width / 2}
                 x2={x + width / 2}
                 y1={0}
-                y2={y} // Define this based on your chart layout
+                y2={y}
                 stroke="black"
                 strokeWidth={1}
                 strokeDasharray="4,4"
@@ -149,7 +151,7 @@ const renderShape = (
             }
           </>
         )}
-      </g>
+      </motion.g>
     </>
   );
 };
@@ -743,7 +745,9 @@ const BarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
         tremor-id="tremor-raw"
         {...other}
       >
-        <ResponsiveContainer>
+        <ResponsiveContainer
+          className="-ml-4"
+        >
           <RechartsBarChart
             data={data}
             onClick={
