@@ -216,14 +216,14 @@ const MonthlyDisplay = () => {
             <div className="w-full text-black flex flex-row gap-4 justify-between ">
               <ConsumptionDisplay
                 title="Questo mese"
-                timeString={`dal ${dayjs(currentMonthData[0].formattedDate).format("DD/MM/YYYY")} al ${dayjs(currentMonthData[currentMonthLastIndex - 1].formattedDate).format("DD/MM/YYYY")}`}
+                timeString={`dal ${dayjs(currentMonthData[0].formattedDate).format("DD/MM/YY")} al ${dayjs(currentMonthData[currentMonthLastIndex - 1].formattedDate).format("DD/MM/YY")}`}
                 value={currentMonthUsage}
                 unit="kWh"
               />
               <ConsumptionDisplay
                 title="Lo scorso mese"
                 value={previousMonthUsage}
-                timeString={`dal ${dayjs(previousMonthData[0].formattedDate).format("DD/MM/YYYY")} al ${dayjs(previousMonthData[previousMonthLastIndex - 1].formattedDate).format("DD/MM/YYYY")}`}
+                timeString={`dal ${dayjs(previousMonthData[0].formattedDate).format("DD/MM/YY")} al ${dayjs(previousMonthData[previousMonthLastIndex - 1].formattedDate).format("DD/MM/YY")}`}
                 unit="kWh"
               />
             </div>
