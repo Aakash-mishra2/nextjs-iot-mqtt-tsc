@@ -153,7 +153,7 @@ const MonthlyDisplay = () => {
   useEffect(() => {
     dispatch(fetchMonthlyData({ //data for current month usage
       serial: serial,
-      month: dayjs().month(),
+      month: dayjs().month() + 1,
       year: dayjs().year(),
     }))
       .unwrap()
@@ -164,7 +164,7 @@ const MonthlyDisplay = () => {
 
     dispatch(fetchMonthlyData({   //fetch data for previous month usage
       serial: serial,
-      month: dayjs().month() - 1,
+      month: dayjs().month(),
       year: dayjs().year(),
     })).unwrap()
       .then((res) => {
@@ -173,12 +173,8 @@ const MonthlyDisplay = () => {
       });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch])
+  }, [dispatch]);
 
-  const currentMonthLastIndex = currentMonthData
-    .map((obj, index) => (Object.keys(obj).length > 0 ? index : -1))
-    .filter((index) => index !== -1)
-    .length - 1;
 
   const previousMonthLastIndex = previousMonthData
     .map((obj, index) => (Object.keys(obj).length > 0 ? index : -1))
@@ -186,6 +182,7 @@ const MonthlyDisplay = () => {
     .length - 1;
 
   const currentMonthUsage = currentMonthData.reduce((sum, item) => sum + (item.totalActEnergy ?? 0), 0);
+  const currentMonthLastIndex = currentMonthData.findLastIndex((item) => item.date?.length);
   const previousMonthUsage = previousMonthData.reduce((sum, item) => sum + (item.totalActEnergy ?? 0), 0);
 
   return (

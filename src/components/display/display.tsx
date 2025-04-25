@@ -145,9 +145,10 @@ const Display = () => {
     }),
   }
   );
-
   const prevDay = prevDayConsumption.totalEnergyConsumed ?? 0;
   const currDayConsumption = currentDayConsumption.totalEnergyConsumed ?? 0;
+  const timestringCurrDay = currentDayConsumption.data.findLastIndex((item) => item.date.length > 0);
+
   let difference = 0;
   if (
     currentDayConsumption.totalEnergyConsumed &&
@@ -196,8 +197,7 @@ const Display = () => {
                   <ConsumptionDisplay
                     title="Oggi"
                     value={currDayConsumption}
-                    timeString={currentDayConsumption?.peakConsumption.timeString ? `00 - ${currentDayConsumption?.peakConsumption?.timeString.split("-")[1]
-                      }` : ""}
+                    timeString={currentDayConsumption?.peakConsumption.timeString ? `00 - ${timestringCurrDay + 1}:00` : ""}
                     unit="kW"
                   />
                   <ConsumptionDisplay
